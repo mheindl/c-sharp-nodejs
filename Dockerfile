@@ -6,4 +6,6 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -
 RUN npm install -g npm
 RUN npm install -g node-gyp
 
+WORKDIR /app
+
 ENTRYPOINT [ "dotnet" ]
