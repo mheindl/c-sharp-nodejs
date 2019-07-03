@@ -8,4 +8,4 @@ RUN npm install -g node-gyp
 
 WORKDIR /app
 
-ENTRYPOINT [ "dotnet" ]
+# ENTRYPOINT [ "dotnet" ]
