@@ -21,18 +21,24 @@ image: mheindl/c-sharp-nodejs:latest
 stages:
    - build
    - test
-   
-before_script:
-   - "cd MyApplication"
-   - "dotnet restore"
+   - publish
    
 build:
    stage: build
    script:
+      - "dotnet clean"
       - "dotnet build"
       
 test:
    stage: test
    script:
       - "dotnet test"
+      
+publish:
+   stage: publish
+   script:
+      - "dotnet publish"
+   artifacts:
+      paths:
+         - "./MyApplication/bin/Debug/netcoreapp2.1/publish/"
 ```
